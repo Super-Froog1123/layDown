@@ -1,0 +1,233 @@
+/* 默认的section样式 */
+section {
+    width: 55%;
+    height: auto;
+
+
+    /* 居中 */
+    margin: 0 auto;
+
+    /* section上外边距设置 */
+    margin-top: 30px;
+
+    transition: width 0.5s ease; /* 添加过渡效果，持续时间为0.5秒 */
+}
+
+
+/* 当页面宽度小于1000px时，宽度逐渐变大 */
+@media screen and (max-width: 1000px) {
+    section {
+        width: 70%; /* 调整宽度 */
+        padding: 10px;
+    }
+}
+
+/* 当页面宽度小于750px时，宽度继续变大 */
+@media screen and (max-width: 750px) {
+    section {
+        width: 85%; /* 进一步调整宽度 */
+        padding: 10px;
+    }
+}
+
+/* 当页面宽度小于500px时，section宽度为100% */
+@media screen and (max-width: 500px) {
+    section {
+        width: 98%; /* 填充整个页面宽度 */
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+/* 音频视频模板 */
+.section_radio {
+    width: 50%;
+    height: auto;
+
+    margin: 0 auto;
+    padding: 10px;
+    border: 3px solid lightgrey;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section_radio > p {
+    margin-bottom: 30px;
+}
+
+
+/* 当页面宽度小于1000px时，宽度逐渐变大 */
+@media screen and (max-width: 1000px) {
+    .section_radio {
+        width: 70%; /* 调整宽度 */
+        padding: 10px;
+    }
+}
+
+/* 当页面宽度小于750px时，宽度继续变大 */
+@media screen and (max-width: 750px) {
+    .section_radio {
+        width: 85%; /* 进一步调整宽度 */
+        padding: 10px;
+    }
+}
+
+/* 当页面宽度小于500px时，section宽度为100% */
+@media screen and (max-width: 500px) {
+    .section_radio {
+        width: 98%; /* 填充整个页面宽度 */
+        padding: 10px;
+    }
+}
+
+
+
+
+
+/* section1 */
+.section1 > p{
+    margin-bottom: 30px;
+
+    font-size: 24px;
+
+    line-height: 2em;
+}
+
+
+/* section2 */
+.section2 a {
+    color: goldenrod;
+}
+
+.section2 p {
+    margin: 20px 0;
+}
+
+
+/* section3 */
+.section3 {
+    display: flex;
+    flex-direction: row;
+}
+
+.section3 > div:nth-child(1) {
+    width: 40%;
+    padding: 15px;
+    border: 5px solid lightgray;
+
+    font-size: 24px;
+    line-height: 2em;
+} 
+
+.section3 > div:nth-child(2) {
+    width: 40%;
+    margin-left: 15%;
+} 
+
+
+
+/* section4 */
+.section4 {
+    display: flex;
+    flex-direction: row;
+}
+
+.section4 > div:nth-child(2) {
+    width: 40%;
+    padding: 15px;
+    margin-left: 15%;
+    border: 5px solid lightgray;
+
+    font-size: 24px;
+    line-height: 2em;
+} 
+
+.section4 > div:nth-child(1) {
+    width: 40%;
+} 
+
+
+/* section5 */
+.section5 {
+    display: flex;
+    transform: translate(-3%, 0);
+}
+
+.section5 img {
+    width: 52%;
+    height: auto;
+}
+
+.section5 > img:nth-child(2) {
+    margin-left: 2%;
+}
+
+
+/* section6 */
+.section6 {
+    display: flex;
+}
+
+.section6 div {
+    width: 50%;
+    height: auto;
+}
+
+.section6 > div:nth-child(2) {
+    margin-left: 5%;
+}
+
+.section6 a {
+    color: goldenrod;
+}
+
+
+/* section7 */
+.section7 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.section7 div {
+    width: 80%;
+}
+
+.section6 > div:nth-child(2) {
+    margin-left: 10%;
+}
+
+
+/* section8 */
+.section8 {
+    display: flex;
+    flex-direction: row;
+}
+
+.section8 div {
+    width: 48%;
+}
+
+.section8 > div:nth-child(2) {
+    margin-left: 10%;
+}
+
+
+/* section9 */
+.section9 {
+    display: flex;
+    flex-direction: row;
+}
+
+.section9 div {
+    width: 48%;
+}
+
+.section9 > div:nth-child(2) {
+    margin-left: 10%;
+}

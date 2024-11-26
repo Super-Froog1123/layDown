@@ -1,0 +1,151 @@
+.sidepanel a {
+  
+  /* 更改目录间距 */
+  margin-top: 50px;
+
+
+  /* 更改字体大小 */
+  font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------------------------------------------------------------- */
+
+nav {
+  position: fixed; /* 固定导航栏 */
+  top: 5%;
+  left: 5%;
+  background-color: #ffffff;
+
+  /* box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);  */
+
+  z-index: 999;
+
+  border-radius: 5px;
+
+  transition: width 0.5s ease;
+}
+
+/* 当页面宽度小于750px时，宽度继续变大 */
+@media screen and (max-width: 750px) {
+  nav {
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background-color: #ffffff;
+
+    z-index: 999;
+  }
+}
+
+/* 为用于打开侧面板的按钮设置样式 */
+.openbtn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: #ffffff00;
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #ebebeb;
+  border-radius: 5px;
+}
+
+/* 侧面板菜单 */
+.sidepanel {
+  height: 100%; /* 指定高度 */
+  width: 0; /* 0 宽度 - 使用 JavaScript 更改 */
+  position: fixed; /* 原地不动 */
+  z-index: 1; /* 保持领先 */
+  top: 0;
+  left: 0;
+  background-color: #ffffff; /* 黑色*/
+  overflow-x: hidden; /* 禁用水平滚动 */
+  padding-top: 60px; /* 将内容从顶部放置 60px */
+  transition: 0.5s; /* 0.5 秒过渡效果在侧面板中滑动 */
+}
+
+/* 侧面板链接 */
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+/* 当您将鼠标悬停在导航链接上时，更改它们的颜色 */
+.sidepanel a:hover {
+  color: goldenrod;
+}
+
+/* 关闭按钮的位置和样式（右上角） */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+/* --------------------------------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------------------------------- */
+
+
+.upbtn {
+  width: 60px;
+  height: 60px;
+
+  position: fixed; /* 固定导航栏 */
+  bottom: 5%;
+  right: 5%;
+
+  background-color: #ffffff00;
+  border: none;
+}
+
+.upbtn img {
+  width: 40px;
+  height: 40px;
+}
+
+.upbtn:hover {
+  background-color: #ebebeb;
+  border-radius: 5px;
+}
+
+
+
+@media screen and (max-width: 750px) {
+  .upbtn {
+    position: fixed; /* 固定导航栏 */
+    top: 0;
+    right: 0;
+  }
+
+  .upbtn img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+/* --------------------------------------------------------------------------------------------------------- */

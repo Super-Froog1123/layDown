@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECharts 示例</title>
+
+
+
+
+
+    <!-- head里面放这些 -->
+    <!-- ===========================================-->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .chart-container {
+            flex: 1;
+            height: 400px;
+        }
+    </style>
+    <!-- ========================================== -->
+
+</head>
+<body>
+
+    <!-- 直接粘贴 -->
+    <!-- ========================================== -->
+    <div class="container">
+        <!-- 图表1 -->
+        <div id="chart1" class="chart-container"></div>
+        <!-- 图表2 -->
+        <div id="chart2" class="chart-container"></div>
+        <!-- 图表3 -->
+        <div id="chart3" class="chart-container"></div>
+    </div>
+
+    <script>
+        // 增幅计算函数
+        function calculateGrowthRate(data) {
+            const growthRate = [];
+            for (let i = 1; i < data.length; i++) {
+                let rate = ((data[i] - data[i - 1]) / data[i - 1]) * 100;
+                growthRate.push(rate.toFixed(1)); // 保留1位小数
+            }
+            return [0, ...growthRate]; // 第一个点没有增幅，设为0
+        }
+
+        // 图表配置函数
+        function createChart(containerId, title, data, yAxisLabel, maxGrowth = 500) {
+            var myChart = echarts.init(document.getElementById(containerId));
+
+            var growth = calculateGrowthRate(data);
+
+            var option = {
+                title: {
+                    text: title,
+                    left: 'center',
+                    top: 10,
+                    textStyle: {
+                        fontSize: 16,
+                        fontWeight: 'bold'
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['数值', '增幅'],
+                    top: 50
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: ['组1', '组2'],
+                        axisLabel: {
+                            formatter: function (value) {
+                                return value;
+                            }
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: yAxisLabel,
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    },
+                    {
+                        type: 'value',
+                        name: '增幅/%',
+                        axisLabel: {
+                            formatter: '{value} %'
+                        },
+                        position: 'right',
+                        max: maxGrowth // 设置增幅轴的最大值
+                    }
+                ],
+                series: [
+                    {
+                        name: '数值',
+                        type: 'bar',
+                        data: data,
+                        barWidth: '30%',
+                        itemStyle: {
+                            color: '#9ed8d8'
+                        }
+                    },
+                    {
+                        name: '增幅',
+                        type: 'line',
+                        yAxisIndex: 1,
+                        data: growth,
+                        symbol: 'circle',
+                        symbolSize: 8,
+                        lineStyle: {
+                            color: '#D96063',
+                            width: 2.5 // 增加折线的宽度
+                        },
+                        itemStyle: {
+                            color: '#D96063'
+                        },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{c} %'
+                        }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+        }
+
+        // 图表1：15至24歲港人月入中位數/元（收入增幅）
+        createChart(
+            'chart1',
+            '15至24歲港人月入中位數/元（收入增幅）',
+            [6500, 15000],
+            '收入/元',
+            200 // 最大增幅显示范围设置为200%
+        );
+
+        // 图表2：25至34歲港人月入中位数/元（收入增幅）
+        createChart(
+            'chart2',
+            '25至34歲港人月入中位数/元（收入增幅）',
+            [10300, 20500],
+            '收入/元',
+            200 // 最大增幅显示范围设置为200%
+        );
+
+        // 图表3：差估署全港所有類別住宅售價指數（樓價增幅）
+        createChart(
+            'chart3',
+            '差估署全港所有類別住宅售價指數（樓價增幅）',
+            [61.6, 337.4],
+            '楼价指数',
+            500 // 最大增幅显示范围设置为500%，以突出447%的高点
+        );
+    </script>
+
+    <!-- ================================================== -->
+</body>
+</html>

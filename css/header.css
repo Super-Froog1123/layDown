@@ -1,0 +1,110 @@
+header{
+    width: 55%;
+    height: auto;
+    
+    margin: 0 auto;
+
+    /* header上边距设置 */
+    margin-top: 50px;
+
+    /* 字体 */
+    font-family: 'Times New Roman', Times, serif;
+
+
+    transition: width 0.5s ease; /* 添加过渡效果，持续时间为0.5秒 */
+}
+
+
+/* 当页面宽度小于1000px时，宽度逐渐变大 */
+@media screen and (max-width: 1000px) {
+    header {
+        width: 70%; /* 调整宽度 */
+        padding: 10px;
+    }
+}
+
+/* 当页面宽度小于750px时，宽度继续变大 */
+@media screen and (max-width: 750px) {
+    header {
+        width: 85%; /* 进一步调整宽度 */
+        padding: 10px;
+    }
+}
+
+/* 当页面宽度小于500px时，section宽度为100% */
+@media screen and (max-width: 500px) {
+    header {
+        width: 98%; /* 填充整个页面宽度 */
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+header > img {
+    width: 102%;
+    height: auto;
+
+    /* 移动设置，第一个参数设置左右，第二个参数设置上下，不改变源照片文档流占位 */
+    transform: translate(-2%, 0);
+}
+
+
+.title {
+    /* 上间距设置 */
+    margin-top: 30px;
+
+    /* 文字居中对其 */
+    text-align: center;
+
+    /* 文字大小 */
+    font-size: 80px;
+
+    /* 文字粗细 */
+    font-weight: 450;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .title {
+        font-size: 40px;
+    }
+}
+
+/* 当页面宽度小于750px时，宽度继续变大 */
+@media screen and (max-width: 750px) {
+    .title {
+        font-size: 40px;
+    }
+}
+
+/* 当页面宽度小于500px时，section宽度为100% */
+@media screen and (max-width: 500px) {
+    .title {
+        font-size: 40px;
+    }
+}
+
+
+.date {
+    /* 上间距设置 */
+    margin-top: 30px;
+
+    /* 文字居中对其 */
+    text-align: center;
+
+    /* 文字大小 */
+    font-size: 25px;
+
+    /* 文字粗细 */
+    font-weight: 450;
+
+    /* 文字颜色 */
+    color: rgb(195, 195, 195);
+}

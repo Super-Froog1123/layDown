@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 缓动 */
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: white !important;
+}
